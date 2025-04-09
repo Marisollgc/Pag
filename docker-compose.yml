@@ -1,6 +1,6 @@
 networks:
-  bd:
-  web:
+  pag_web:
+  pag_bd:
  
 services:
   mysql_db:
@@ -15,7 +15,7 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - mysql_data:/var/lib/mysql
+      - pag_mysql_data:/var/lib/mysql
  
   page:
     build: .

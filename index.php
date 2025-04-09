@@ -1,8 +1,8 @@
 <?php
-$servername = "contenedorbd"; // Nombre del contenedor de la base de datos
+$servername = "mysql_db"; // Nombre del contenedor de la base de datos
 $username = "root";
 $password = "1234";
-$dbname = "basedare";
+$dbname = "base_redes";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
