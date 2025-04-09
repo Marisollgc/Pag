@@ -1,6 +1,7 @@
+version: "3.8"
 networks:
-  pag_web:
-  pag_bd:
+  pageweb:
+  based:
  
 services:
   mysql_db:
@@ -11,21 +12,21 @@ services:
       MYSQL_ROOT_PASSWORD: 1234
       MYSQL_DATABASE: base_redes
     networks:
-      - bd
+      - based
     ports:
       - "3306:3306"
     volumes:
       - pag_mysql_data:/var/lib/mysql
  
-  page:
+  pagina:
     build: .
-    container_name: page
+    container_name: pageweb
     restart: always
     ports:
       - "8080:80"
     networks:
-      - web
-      - bd
+      - pageweb
+      - based
     depends_on:
       - mysql_db
     volumes:
